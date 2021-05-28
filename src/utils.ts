@@ -40,8 +40,6 @@ const getTotalDuration = (a: Ticket): number =>
 export const getMaxStops = (a: Ticket): number =>
   Math.max(...a.segments.map((s) => s.stops.length));
 
-export const TICKETS_TO_SHOW = 5;
-
 export const SORT: Sort[] = [
   {
     id: 0,

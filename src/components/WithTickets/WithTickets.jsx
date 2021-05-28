@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { api } from "../../api";
 
-const TICKETS_INTERVAL = 30000;
+const TICKETS_INTERVAL = process.env.REACT_APP_POLING_DELAY || 30000;
 
 export const WithTickets = ({ component: Component }) => {
   const [tickets, setTickets] = useState([]);

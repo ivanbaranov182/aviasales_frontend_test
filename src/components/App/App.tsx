@@ -8,8 +8,10 @@ import { TicketList } from "../TicketList";
 import { Backdrop } from "../Blackdrop";
 import { Message } from "../Message";
 import { AppProps, FilterType, Sort } from "./App.type";
-import { TICKETS_TO_SHOW, SORT, FILTER, ticketFilter } from "../../utils";
+import { SORT, FILTER, ticketFilter } from "../../utils";
 import "./App.scss";
+
+const TICKETS_TO_SHOW = process.env.REACT_APP_TICKETS_TO_SHOW || 5;
 
 export const App: React.FC<AppProps> = ({ tickets, loading, error }) => {
   const [page, setPage] = useState<number>(1);
@@ -21,7 +23,7 @@ export const App: React.FC<AppProps> = ({ tickets, loading, error }) => {
     return tickets
       .filter(ticketFilter(activeFilters))
       .sort(SORT[activeSort].fn)
-      .slice(0, TICKETS_TO_SHOW * page);
+      .slice(0, +TICKETS_TO_SHOW * page);
   }, [tickets, activeSort, activeFilters, page]);
 
   const handleFilterChange = (id: FilterType) => {
