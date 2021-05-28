@@ -1,0 +1,31 @@
+.radio-button {
+  & input {
+    display: none;
+  }
+
+  & input:checked + span {
+    background-color: #2196f3;
+    color: #fff;
+  }
+
+  & span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    background-color: #fff;
+    border: 1px solid #cecece;
+    min-height: 50px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #a6d7ff;
+      border-color: #a6d7ff;
+      color: #fff;
+    }
+  }
+}

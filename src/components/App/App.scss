@@ -1,0 +1,25 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__logo {
+    margin: 20px 0;
+    transform-origin: center;
+    &_loading {
+      animation: 2s loadingMove infinite;
+    }
+  }
+
+  &__cols {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
+  }
+}
+
+@keyframes loadingMove {
+  50% {
+    transform: rotateY(360deg);
+  }
+}

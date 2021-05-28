@@ -1,0 +1,25 @@
+.sort-tabs {
+  display: flex;
+  margin-bottom: 20px;
+
+  &__item {
+    width: calc(100% / 3);
+    margin-left: -1px;
+
+    & input:checked + span {
+      border-color: #2196f3;
+    }
+
+    & span:hover {
+      border-color: #a6d7ff;
+    }
+
+    &:first-child span {
+      border-radius: 5px 0 0 5px;
+    }
+
+    &:last-child span {
+      border-radius: 0 5px 5px 0;
+    }
+  }
+}
