@@ -1,9 +1,7 @@
-export interface FilterStopsProps {}
+import { Filter, FilterType } from "../App/App.type";
 
-export enum StopType {
-  ALL = "all",
-  NONE = "none",
-  ONE = "1",
-  TWO = "2",
-  THREE = "3",
+export interface FilterStopsProps {
+  items: Filter[];
+  active: FilterType[];
+  onChange: (id: FilterType) => void;
 }
